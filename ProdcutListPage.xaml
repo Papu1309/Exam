@@ -1,0 +1,51 @@
+﻿<Page x:Class="Exam.ProdcutListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Exam"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1200"
+      Title="ProdcutListPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="AddBtn" Click="AddBtn_Click">Добавить</Button>
+            <Button x:Name="EditBtn" Click="EditBtn_Click">Редактировать</Button>
+        </StackPanel>
+        <ListView Grid.Row="1" x:Name="ProductLV">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Width="1000" BorderBrush="Black" BorderThickness="2">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Тип"/>
+                                <TextBlock Text="{Binding ProductType.Name}"/>
+                                <TextBlock Text="Наименование продукта"/>
+                                <TextBlock Text="{Binding ProductName}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Артикул"/>
+                                <TextBlock Text="{Binding Articule}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Минимальная стоимость для партнёра (р)"/>
+                                <TextBlock Text="{Binding MinimalPrice}"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Ширина (м)"/>
+                                <TextBlock Text="{Binding RulonWidth}"/>
+                            </StackPanel>
+                            
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
